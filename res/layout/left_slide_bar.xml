@@ -3,10 +3,10 @@
     android:layout_height="fill_parent"
     android:orientation="horizontal" >
 
-<ListView
-    android:id="@+id/left_slide_bar"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    <ListView
+        android:id="@+id/left_slide_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </ListView>
 
-</ListView>
 </LinearLayout>
