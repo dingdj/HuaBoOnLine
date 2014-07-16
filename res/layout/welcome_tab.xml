@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/common_bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/tab_select_ll"
+        android:layout_width="200dip"
+        android:layout_height="30dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="5dip"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/tab_select_tv_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_left_selected"
+            android:gravity="center"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:text="@string/welcome_zaixue"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/frame_viewpager_tab_textsize" />
+
+        <TextView
+            android:id="@+id/tab_select_tv_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_right"
+            android:gravity="center"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:text="@string/welcome_yixue"
+            android:textColor="@color/common_little_text_color"
+            android:textSize="@dimen/frame_viewpager_tab_textsize" />
+    </LinearLayout>
+
+    <com.huaboonline.widget.WelcomeContentView
+        android:id="@+id/tab_content_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab_select_ll" />
+
+    <com.huaboonline.widget.WelcomeContentView
+        android:id="@+id/tab_content_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab_select_ll"
+        android:visibility="gone" />
+
+</RelativeLayout>
