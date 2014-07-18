@@ -16,5 +16,12 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="AnimationFade">
+        <!-- PopupWindow左右弹出的效果 -->
+        <item name="android:windowEnterAnimation">@anim/left_bar_right_to_left</item>
+        <item name="android:windowExitAnimation">@anim/left_bar_left_to_right</item>
+    </style>
+    
 
 </resources>
