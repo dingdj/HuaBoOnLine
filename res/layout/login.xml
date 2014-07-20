@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/login">
+
+    <RelativeLayout
+            android:id="@+id/login_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp"
+            android:background="@color/half_translucent"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+        <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:background="@android:color/white">
+            <TextView android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:gravity="center"
+                      android:textSize="16sp"
+                      android:text="@string/choose_enterprise_title"
+                      android:textColor="@color/common_title_little_text_color"
+                      android:padding="4dp"/>
+            <View android:layout_width="fill_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/common_title_little_text_color"/>
+
+            <ListView
+                    android:id="@+id/enterprise_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="105dp"
+                    android:listSelector="@android:color/transparent"/>
+
+            <View android:layout_width="fill_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/common_title_little_text_color"/>
+            <CheckBox
+                    android:id="@+id/check_enterprise"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left|center"
+                    android:text="@string/choose_enterprise_check_title"
+                    android:textSize="14sp"
+                    android:paddingLeft="4dp"
+                    android:layout_marginLeft="10.0dip"
+                    android:button="@drawable/login_checkbox_selector"
+                    android:textColor="@android:color/black"
+                    />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -13,12 +13,12 @@
     <!-- common activity -->
     <drawable name="common_bg_color">#f9fafb</drawable>
     <color name="common_text_color">#FF333333</color>
-    <color name="common_little_text_color">#FF919191</color>
+    <!--<color name="common_little_text_color">#FF919191</color>-->
     <color name="common_title_little_text_color">#FF1E83DE</color>
     <color name="common_btn_text_color">#FF5F5F5F</color>
     <color name="common_remind_gray">#ff5b5b5b</color>
     <color name="common_remind_gray_bg">#ffebebeb</color>
     <color name="common_remind_orange">#fff78a41</color>
-  
+    <color name="half_translucent">#70000000</color>
 
 </resources>

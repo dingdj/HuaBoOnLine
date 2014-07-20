@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.huaboonline"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="@string/app_version">
 
     <uses-sdk
         android:minSdkVersion="9"
@@ -14,7 +14,7 @@
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         
         <activity
-            android:name="com.huaboonline.activity.WelcomeActivity"
+            android:name="com.huaboonline.activity.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.huaboonline.activity.MainActivity" />
         
     </application>
 
