@@ -11,11 +11,27 @@ import org.json.JSONObject;
  */
 public class RequestResponseDataParseUtil {
 
-    private static final String HEAD_SECTION = "head";
-    private static final String APP_VERSION_KEY = "appVersion";
-    private static final String APP_PLATFORM_OS = "osPlatform";
-    private static final String REQUEST_TIME = "requestTime";
-    private static final String DATA_SECTION = "data";
+    public static final int NETWORK_ERROR = 100;
+    public static final int APP_SERVER_ERROR = 101;
+    public static final int REQUEST_SUCCESS = 102;
+    public static final int UNLOGIN = 601;
+    public static final int USER_UNEXIST = 602;
+    public static final int OLD_PASSWORD_ERROR = 603;
+    public static final int USER_HAULT = 604;
+    public static final int COURSE_EXIST = 605;
+    public static final int COURSE_NEED_PRIVILAGE = 606;
+    public static final int EXAM_UN_EXIST = 607;
+
+    public static final String HEAD_SECTION = "head";
+    public static final String HEAD_SECTION_CODE = "code";
+    public static final String HEAD_SECTION_MESSAGE = "message";
+    public static final String APP_VERSION_KEY = "appVersion";
+    public static final String APP_PLATFORM_OS = "osPlatform";
+    public static final String REQUEST_TIME = "requestTime";
+    public static final String DATA_SECTION = "data";
+    public static final String POST_SECTION_NAME = "requestData";
+    public static final String RETURN_CODE = "returnCode";
+    public static final String RETURN_RESULT = "returnResult";
 
 
 

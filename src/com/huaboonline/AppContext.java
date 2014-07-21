@@ -24,9 +24,12 @@ public class AppContext extends Application{
     //用户手机号
     private String phoneNum = "";
 
+    public static AppContext appContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        appContext = this;
         //注册App异常崩溃处理器
         Thread.setDefaultUncaughtExceptionHandler(AppException.getAppExceptionHandler());
 
