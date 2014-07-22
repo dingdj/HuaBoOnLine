@@ -1,18 +1,23 @@
 package com.huaboonline.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import com.android.huaboonline.R;
-import com.android.volley.*;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.huaboonline.AppConfig;
 import com.huaboonline.AppContext;
 import com.huaboonline.beans.URLs;
 import com.huaboonline.util.RequestResponseDataParseUtil;
 import com.huaboonline.util.UIHelper;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.math.MathContext;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,17 +25,26 @@ import java.util.Map;
  * 用户登录Activity
  * Created by dingdj on 2014/7/20.
  */
-public class LoginActivity extends BaseActivity{
+public class LoginActivity extends BaseActivity implements AdapterView.OnItemClickListener{
 
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+        listView = (ListView)findViewById(R.id.enterprise_list);
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         String phoneNum = "18950295115";
         requestCompanyList(phoneNum);
     }
-
 
     /**
      * 发起請求
@@ -45,7 +59,17 @@ public class LoginActivity extends BaseActivity{
                      */
                     @Override
                     public void onResponse(JSONObject response) {
+                        new RequestResponseDataParseUtil.ResponseParse(){
+                            @Override
+                            public void parseResponseDataSection(JSONObject dataJsonObject) {//处理正常的业务逻辑
+                                try {
+                                    JSONArray jsonArray = dataJsonObject.getJSONArray("companyList");
 
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }.onResponse(response);
 
                     }
                 }, new Response.ErrorListener() {
@@ -88,4 +112,8 @@ public class LoginActivity extends BaseActivity{
     }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
 }

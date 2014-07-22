@@ -36,4 +36,12 @@
     <string name="sure">确定</string>
     <string name="cancle">取消</string>
 
+    <!-- message -->
+    <string name="unlogin">用户未登录，请重新登录!</string>
+    <string name="user_non_exist">用户不存在!</string>
+    <string name="old_passwd_wrong">旧密码不匹配!</string>
+    <string name="user_halt">用户已被停用!</string>
+    <string name="course_exist">该课程已在岗位课体系中，请在[我的岗位]中学习!</string>
+    <string name="only_one_course_select">试用商户只可选一门选修课，申请成为正式商户即可学习!</string>
+    <string name="exam_no_exist">试卷不存在!</string>
 </resources>

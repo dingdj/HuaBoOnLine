@@ -96,4 +96,17 @@ public class UIHelper {
         AlertDialog dialog = builder.create();
         return dialog;
     }
+
+    /**
+     * 获取服务端业务通知Dialog
+     * @param context
+     * @param message
+     * @return
+     */
+    public static AlertDialog getBusinessMessageDialog(Context context, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(message);
+        AlertDialog dialog = builder.create();
+        return dialog;
+    }
 }
