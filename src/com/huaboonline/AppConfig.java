@@ -3,10 +3,13 @@ package com.huaboonline;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import com.android.volley.NetworkResponse;
+import com.ddj.commonkit.StringUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Properties;
  * Created by dingdj on 2014/7/19.
  */
 public class AppConfig {
+    private static final String SET_COOKIE_KEY = "Set-Cookie";
+    private static final String COOKIE_KEY = "Cookie";
+
     private final static String APP_CONFIG = "config";
 
     //保存cookie的key
@@ -138,4 +144,29 @@ public class AppConfig {
             }
         }
     }
+
+    /**
+     * 處理cookie
+     * @param headers
+     */
+    public void checkSessionCookie(Map<String, String> headers){
+        if (headers.containsKey(SET_COOKIE_KEY)) {
+            String cookie = headers.get(SET_COOKIE_KEY);
+            if (cookie.length() > 0) {
+                setCookie(AppContext.appContext, cookie);
+            }
+        }
+    }
+
+    /**
+     * 如果存在cookie設置
+     * @param headers
+     */
+    public void setCookieIfHave(Map<String, String> headers){
+        String cookie = getCookie(AppContext.appContext);
+        if(StringUtils.isNotEmpty(cookie)) {
+            headers.put(COOKIE_KEY, cookie);
+        }
+    }
+
 }

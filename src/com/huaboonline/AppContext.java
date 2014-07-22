@@ -6,6 +6,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import com.android.huaboonline.R;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.ddj.commonkit.android.system.SystemEnvUtil;
 import com.ddj.commonkit.android.system.TelephoneUtil;
 
@@ -26,6 +28,8 @@ public class AppContext extends Application{
 
     public static AppContext appContext;
 
+    private RequestQueue requestQueue;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -43,6 +47,7 @@ public class AppContext extends Application{
     private void init(){
         osPlatform = "Android_"+  Build.VERSION.SDK;
         appVersion = this.getResources().getString(R.string.app_version);
+        requestQueue = Volley.newRequestQueue(this);
     }
 
 
@@ -77,4 +82,9 @@ public class AppContext extends Application{
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
+
+    public RequestQueue getRequestQueue() {
+        return requestQueue;
+    }
+
 }

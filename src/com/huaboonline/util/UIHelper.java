@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import com.android.huaboonline.R;
+import com.android.volley.NetworkError;
+import com.android.volley.ServerError;
+import com.android.volley.VolleyError;
 import com.huaboonline.AppManager;
 
 /**
@@ -51,5 +54,46 @@ public class UIHelper {
                     }
                 });
         builder.show();
+    }
+
+
+    /**
+     * 显示错误对话框
+     * @param context
+     * @param error
+     */
+    public static void showErrorDialog(Context context, VolleyError error) {
+        if(error instanceof NetworkError) {
+            UIHelper.getNetWorkErrorDialog(context).show();
+            return;
+        } else if(error instanceof ServerError) {
+            UIHelper.getServerErrorDialog(context).show();
+            return;
+        } else {
+            UIHelper.getNetWorkErrorDialog(context).show();
+        }
+    }
+
+
+    /**
+     * 網絡錯誤的Dialog
+     * @return
+     */
+    public static AlertDialog getNetWorkErrorDialog(Context context){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(context.getResources().getString(R.string.network_not_connected));
+        AlertDialog dialog = builder.create();
+        return dialog;
+    }
+
+    /**
+     * 服务端异常的Dialog
+     * @return
+     */
+    public static AlertDialog getServerErrorDialog(Context context){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(context.getResources().getString(R.string.server_error));
+        AlertDialog dialog = builder.create();
+        return dialog;
     }
 }
