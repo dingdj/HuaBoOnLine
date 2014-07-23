@@ -19,5 +19,7 @@ public class URLs {
     public final static String GET_ENTERPRISE_INFO = HTTP + HOST + URL_SPLITTER + "web/mobile/login/0/getCompanyList";
 
 
+    //用户登录
+    public final static String USER_LOGIN= HTTP + HOST + URL_SPLITTER + "web/mobile/login/0/getCompanyList";
 
 }

@@ -6,9 +6,7 @@ import android.os.Environment;
 import android.os.Looper;
 import android.widget.Toast;
 import com.android.huaboonline.R;
-import com.ddj.commonkit.android.apk.ApkUtil;
 import com.huaboonline.util.UIHelper;
-import org.apache.commons.httpclient.HttpException;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -174,9 +172,6 @@ public class AppException extends Exception implements UncaughtExceptionHandler{
     public static AppException network(Exception e) {
         if(e instanceof UnknownHostException || e instanceof ConnectException){
             return new AppException(TYPE_NETWORK, 0, e);
-        }
-        else if(e instanceof HttpException){
-            return http(e);
         }
         else if(e instanceof SocketException){
             return socket(e);

@@ -25,6 +25,9 @@ public class AppConfig {
     //保存cookie的key
     public final static String CONF_COOKIE = "cookie";
 
+    public final static String AUTO_LOGIN = "auto_login";
+
+    public final static String ENTERPRISE_ID = "enterprise_id";
 
     private static AppConfig appConfig;
 
@@ -168,5 +171,13 @@ public class AppConfig {
             headers.put(COOKIE_KEY, cookie);
         }
     }
+
+    /**
+     * 每次登录时清除Cookie
+     */
+    public void clearCookie() {
+        setCookie(AppContext.appContext, "");
+    }
+
 
 }
